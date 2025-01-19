@@ -68,3 +68,17 @@ C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\obj\D
 C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\obj\Debug\net6.0\CulinaryCrossroads1.1.pdb
 C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\obj\Debug\net6.0\CulinaryCrossroads1.1.genruntimeconfig.cache
 C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\obj\Debug\net6.0\ref\CulinaryCrossroads1.1.dll
+C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\bin\Debug\net6.0\System.Collections.Immutable.dll
+C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\bin\Debug\net6.0\CullinaryCrossroads1.1.Core.dll
+C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\bin\Debug\net6.0\CullinaryCrossroads1.1.Infrastructure.dll
+C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\bin\Debug\net6.0\CullinaryCrossroads1.1.Core.pdb
+C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\bin\Debug\net6.0\CullinaryCrossroads1.1.Infrastructure.pdb
