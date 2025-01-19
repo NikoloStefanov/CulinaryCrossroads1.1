@@ -11,13 +11,18 @@
                 '<b>Открийте любими ястия от цял свят.</b><br>' +
                 '<b>Кулинарно пътешествие без граници.</b><br>' +
                 '<b>Автентични рецепти от различни култури.</b><br>' +
-                '<b>Най-доброто от световната кухня.</b>';}
+                '<b>Най-доброто от световната кухня.</b>';
+         }
                 
-        {
+        
             function showAnotherText()
             {
-               document.getElementById('').innerHTML='';                
-                }
+               document.getElementById('id2').innerHTML=
+                    '<b>Възможност за добавяне на рецепти в личен списък с "Любими".</b><br>'+
+                    '<b>Възможност за добавяне на рецепти</b><br>' +
+                    '<b>Възможност за редакция на качените рецепти.</b><br>' +
+                    '<b>Достъп до всички рецепти.<b>';
+            }
     </script>
     <style>
        
@@ -41,10 +46,17 @@
 
     <h1 style="text-align: center">Вкусове от света</h1>
     <img src="https://m3.netinfo.bg/media/images/39711/39711248/960-540-hrana.jpg"
-    alt="Кулинарна снимка"
-    style="display: block; margin-left: auto; margin-right: auto; width: 80%;">
+    alt="Кулинарна снимка" usemap="#image-map"
+    style="display: block; margin-left: auto; margin-right: auto; width: 80%; height: auto">
+    <map name="image-map">
+        <area shape="rect" coords="50,50,300,300"
+        href="https://recepti.gotvach.bg/r-271448-%D0%9A%D1%80%D0%B5%D1%85%D0%BA%D0%B8_%D0%B7%D0%B0%D0%B4%D1%83%D1%88%D0%B5%D0%BD%D0%B8_%D1%81%D0%B2%D0%B8%D0%BD%D1%81%D0%BA%D0%B8_%D0%BF%D1%8A%D1%80%D0%B6%D0%BE%D0%BB%D0%B8"
+        target="_blank" />
+       
+    </map>
+    <h2 style="text-align: center">Натисни върху пържолата на снимката за да видиш готова рецепта</h2>
     <button class = "center-button" type = 'button' onclick="showText()" style="button">Какви очаквания да имате от нашия сайт</button>
-    <h2 id="expectation" style="text-align: center"></h2>
+    <h3 id="expectation" style="text-align: center"></h3>
     <button class="center-button" type = 'button' onclick="showAnotherText()">Какво можеш да правиш в сайта ако се регистрираш</button>
-    <h3 id="id2" style="text-align: center"></h3>
+    <h4 id="id2" style="text-align: center"></h4>
 </body>
