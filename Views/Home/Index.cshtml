@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Вкусове от света";
+}
+<head>
+    <script>
+        function showText() 
+        {
+            document.getElementById('expectation').innerHTML =               
+                '<b>Онлайн платформа за рецепти от цял свят, предлагаща автентични ястия, представени стъпка по стъпка.</b><br>' +
+                '<b>Рецепти от близо и далеч.</b><br>' +
+                '<b>Открийте любими ястия от цял свят.</b><br>' +
+                '<b>Кулинарно пътешествие без граници.</b><br>' +
+                '<b>Автентични рецепти от различни култури.</b><br>' +
+                '<b>Най-доброто от световната кухня.</b>';}
+                
+        {
+            function showAnotherText()
+            {
+               document.getElementById('').innerHTML='';                
+                }
+    </script>
+    <style>
+       
+        .center-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px; 
+            font-size: 16px;
+        }
+    /*  body{
+          background-image: url("https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGZvb2R8ZW58MHx8MHx8fDA%3D");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0;
+        height: 100vh;
+      }*/
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center">Вкусове от света</h1>
+    <img src="https://m3.netinfo.bg/media/images/39711/39711248/960-540-hrana.jpg"
+    alt="Кулинарна снимка"
+    style="display: block; margin-left: auto; margin-right: auto; width: 80%;">
+    <button class = "center-button" type = 'button' onclick="showText()" style="button">Какви очаквания да имате от нашия сайт</button>
+    <h2 id="expectation" style="text-align: center"></h2>
+    <button class="center-button" type = 'button' onclick="showAnotherText()">Какво можеш да правиш в сайта ако се регистрираш</button>
+    <h3 id="id2" style="text-align: center"></h3>
+</body>
