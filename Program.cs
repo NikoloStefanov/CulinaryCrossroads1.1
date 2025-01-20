@@ -1,4 +1,7 @@
 using CulinaryCrossroads1._1.Interface.Data;
+using CullinaryCrossroads1._1.Core.Contacts;
+using CullinaryCrossroads1._1.Core.Services;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +22,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => {
 })
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IFoodService, FoodService>();
 
 var app = builder.Build();
 
