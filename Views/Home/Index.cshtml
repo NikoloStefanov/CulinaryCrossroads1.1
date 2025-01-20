@@ -25,21 +25,28 @@
             }
     </script>
     <style>
-       
-        .center-button {
-            display: block;
+
+            .center-button{
+            display:block;
             margin: 20px auto;
-            padding: 10px 20px; 
+            padding: 10px 20px;
             font-size: 16px;
-        }
-    /*  body{
-          background-image: url("https://images.unsplash.com/photo-1447078806655-40579c2520d6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGZvb2R8ZW58MHx8MHx8fDA%3D");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        margin: 0;
-        height: 100vh;
-      }*/
+            background-color: #FFA500;
+            color:White;
+            border: none;
+            border-radius: 10px;
+            box-shodaw 3px 3px 5px #888888;
+            transition: background-color 0.5s ease; }
+
+              .center-button:hover{
+                  background-color: #FFD700;
+              }
+
+              .center-button{
+              font-family: Arial,sens-serif;
+              font-weight: bold;
+              }
+          }
     </style>
 </head>
 <body>
@@ -55,7 +62,7 @@
        
     </map>
     <h2 style="text-align: center">Натисни върху пържолата на снимката за да видиш готова рецепта</h2>
-    <button class = "center-button" type = 'button' onclick="showText()" style="button">Какви очаквания да имате от нашия сайт</button>
+    <button class="center-button" type='button' onclick="showText()">Какви очаквания да имате от нашия сайт</button>
     <h3 id="expectation" style="text-align: center"></h3>
     <button class="center-button" type = 'button' onclick="showAnotherText()">Какво можеш да правиш в сайта ако се регистрираш</button>
     <h4 id="id2" style="text-align: center"></h4>
