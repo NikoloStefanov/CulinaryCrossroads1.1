@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CulinaryCrossroads1._1.Controllers
 {
     public class AgentController : Controller
     {
-        public IActionResult Index()
+        [Authorize]
+        [HttpPost]
+        public IActionResult Become()
         {
             return View();
         }
