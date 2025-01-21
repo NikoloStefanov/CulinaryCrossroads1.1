@@ -261,3 +261,4 @@ C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\obj\D
 C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\obj\Debug\net6.0\CulinaryCrossroads1.1.pdb
 C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\obj\Debug\net6.0\CulinaryCrossroads1.1.genruntimeconfig.cache
 C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\obj\Debug\net6.0\ref\CulinaryCrossroads1.1.dll
+C:\Users\Owner\Desktop\Niksuna\CulinaryCrossroads1.1\CulinaryCrossroads1.1\obj\Debug\net6.0\CulinaryCrossroads1.1.MvcApplicationPartsAssemblyInfo.cs
