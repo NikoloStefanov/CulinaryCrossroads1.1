@@ -1,4 +1,5 @@
 ﻿using CulinaryCrossroads1._1.Models.Agent;
+using CullinaryCrossroads1._1.Core.Contacts;
 using CullinaryCrossroads1._1.Core.Services;
 using CullinaryCrossroads1._1.Infrastructure;
 using Microsoft.AspNetCore.Authorization;
@@ -8,8 +9,8 @@ namespace CulinaryCrossroads1._1.Controllers
 {
     public class AgentController : Controller
     {
-        private readonly AgentService agentService;
-        public AgentController(AgentService _agentService)
+        private readonly IAgentService agentService;
+        public AgentController(IAgentService _agentService)
         {
             agentService = _agentService;
         }
