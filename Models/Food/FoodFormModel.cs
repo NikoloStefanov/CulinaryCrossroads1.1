@@ -18,6 +18,5 @@ namespace CulinaryCrossroads1._1.Models.Food
         [Display(Name ="Category")]
         public int CategoryId { get; set; }
         public IEnumerable<FoodCategoryServiceModel> Categories { get; set; } = new List<FoodCategoryServiceModel>();
-        public int AgentId { get; set; }
     }
 }
