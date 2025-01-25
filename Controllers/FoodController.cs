@@ -21,10 +21,20 @@ namespace CulinaryCrossroads1._1.Controllers
 
 
         [HttpGet]
-        public async Task< IActionResult> All()
+        public async Task<IActionResult> All([FromQuery] AllFoodsQueryModel query)
         {
-           
-            return View();
+           var queryResult = foodService.All(
+               query.Category,
+               query.SearchTerm,
+               query.Sorting,
+               query.CurrentPage,
+               AllFoodsQueryModel.FoodPerPage);
+            query.TotalFoodsCount = queryResult.TotalFoodsCount;
+            query.Foods = queryResult.Foods;
+            var foodCategories = await foodService.AllCategoriesNameAsync();
+            query.Categories = foodCategories;
+
+            return View(query);
         }
         [HttpGet]
         public async Task<IActionResult> Add()
