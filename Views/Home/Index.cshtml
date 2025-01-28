@@ -14,15 +14,22 @@
                 '<b>Най-доброто от световната кухня.</b>';
          }
                 
-        
             function showAnotherText()
             {
-               document.getElementById('id2').innerHTML=
-                    '<b>Възможност за добавяне на рецепти в личен списък с "Любими".</b><br>'+
-                    '<b>Възможност за добавяне на рецепти</b><br>' +
-                    '<b>Възможност за редакция на качените рецепти.</b><br>' +
+               document.getElementById('id2').innerHTML=         
                     '<b>Достъп до всички рецепти.<b>';
             }
+        function showAgentInfo()
+        {
+            document.getElementById('id3').innerHTML =
+                '<b>Aко станеш агент ще можеш да:</b><br>' +
+                '<b>Качваш свои рецепти.</b><br>' +
+                '<b>Ако си изпуснал нещо в рецептата си да я редактираш</b><br>' +
+                '<b>Ако не ти харесва как изглежда рецептата ти да я изтриеш</b><br>' +
+                '<b>Да виждаш всички свои качени рецепти</b><br>'+
+                '<b>Да добавяш в любими рецептите които ти харесват</b><br>';
+                
+        }
     </script>
     <style>
 
@@ -66,4 +73,6 @@
     <h3 id="expectation" style="text-align: center"></h3>
     <button class="center-button" type = 'button' onclick="showAnotherText()">Какво можеш да правиш в сайта ако се регистрираш</button>
     <h4 id="id2" style="text-align: center"></h4>
+    <button class="center-button" type='button' onclick="showAgentInfo()">Ами ако станеш Агент?</button>
+    <h5 id = "id3" style = "text-align: center"></h5>
 </body>
