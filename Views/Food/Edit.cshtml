@@ -1,0 +1,13 @@
+﻿@using CulinaryCrossroads1._1.Models.Food
+@model FoodFormModel
+@{
+	ViewBag.Title = "Edit Recipe";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<partial name = "_FoodFormPartial" model = "@Model"/>
+@section Scripts{
+<partial name = "_ValidationScriptsPartial" />
+}
+	

@@ -96,5 +96,52 @@ namespace CulinaryCrossroads1._1.Controllers
             var foodDetails = await foodService.FoodDetailsByIdAsync(id);
             return View(foodDetails);
         }
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            if (await foodService.ExistsAsync(id) == false)
+            {
+                return BadRequest();
+            }
+            if (await foodService.HasAgentWithIdAsync(id, this.User.Id()) == false)
+            {
+                return Unauthorized();
+            }
+            var food = await foodService.FoodDetailsByIdAsync(id);
+            var foodCategoryId = await foodService.GetFoodCategoryIdAsync(id);
+
+            var foodModel = new FoodFormModel()
+            {
+                Title = food.Title,
+                Recipe = food.Recipe,
+                ImageUrl = food.ImageUrl,
+                CategoryId = foodCategoryId,
+                Categories = await foodService.AllCategoriesAsync(),
+            };
+            return View(foodModel);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, FoodFormModel model)
+        {
+            if (await foodService.ExistsAsync(id) == false)
+            {
+                return BadRequest();
+            }
+            if (await foodService.HasAgentWithIdAsync(id, this.User.Id()) == false)
+            {
+                return Unauthorized();
+            }
+            if (await foodService.CategoryExistAsync(id) == false)
+            {
+                ModelState.AddModelError(nameof(model.CategoryId), "Category does not exist!");
+            }
+            if (!ModelState.IsValid)
+            {
+                model.Categories = await foodService.AllCategoriesAsync();
+                return View(model);
+            }
+            await foodService.EditAsync(id, model.Title, model.Recipe, model.ImageUrl, model.CategoryId);
+            return RedirectToAction(nameof(Details), new { id = id });
+        }
     }
 }
