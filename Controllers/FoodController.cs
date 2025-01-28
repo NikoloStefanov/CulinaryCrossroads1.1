@@ -143,5 +143,42 @@ namespace CulinaryCrossroads1._1.Controllers
             await foodService.EditAsync(id, model.Title, model.Recipe, model.ImageUrl, model.CategoryId);
             return RedirectToAction(nameof(Details), new { id = id });
         }
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+
+            if (await foodService.ExistsAsync(id) == false)
+            {
+                return BadRequest();
+            }
+            if (await foodService.HasAgentWithIdAsync(id, this.User.Id()) == false)
+            {
+                return Unauthorized();
+            }
+            var food = await foodService.FoodDetailsByIdAsync(id);
+            var model = new FoodDetailsViewModel()
+            {
+                Title = food.Title,
+                Recipe = food.Recipe,
+                ImageUrl = food.ImageUrl
+            };
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Delete(FoodDetailsViewModel model)
+        {
+
+            if (await foodService.ExistsAsync(model.Id) == false)
+            {
+                return BadRequest();
+            }
+            if (await foodService.HasAgentWithIdAsync(model.Id, this.User.Id()) == false)
+            {
+                return Unauthorized();
+            }
+           
+            await foodService.DeleteAsync(model.Id);
+            return RedirectToAction(nameof(Mine));
+        }
     }
 }
