@@ -1,13 +1,13 @@
 ﻿@using CullinaryCrossroads1._1.Core.Services
 @model FoodServiceModel
 
-
 <div class="col-md-4">
     <div class="card mb-3">
-        <img class="card-img-top" src="@Model.ImageUrl" alt="Food Image">
+        <img class="card-img-top" src="@Model.ImageUrl" alt="Recipe Image">
         <div class="card-body text-center">
-            <h4>@Model.Title</h4>
-      <br />
+            <h4>@Model.Title</h4>           
+            <h6>(@(Model.IsLiked ? "Liked" : "Unliked"))</h6>
+            <br />
             <a asp-controller="Food" asp-action="Details" asp-route-id="@Model.Id"
                class="btn btn-success">Details</a>
             @if (this.User.Identity.IsAuthenticated)
@@ -17,9 +17,21 @@
                 <a asp-controller="Food" asp-action="Delete" asp-route-id="@Model.Id"
                class="btn btn-danger">Delete</a>
                 <p></p>
-                
+                @if (!Model.IsLiked)
+                {
+                    <form class="input-group-sm" asp-controller="Food"
+                  asp-action="Like" asp-route-id="@Model.Id" method="post">
+                        <input class="btn btn-primary" type="submit" value="Like" />
+                    </form>
+                }
+                else
+                {
+                    <form asp-controller="Food" asp-action="Unlike"
+                  asp-route-id="@Model.Id" method="post">
+                        <input class="btn btn-primary" type="submit" value="Unlike" />
+                    </form>
+                }
             }
         </div>
     </div>
 </div>
-

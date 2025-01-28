@@ -180,5 +180,28 @@ namespace CulinaryCrossroads1._1.Controllers
             await foodService.DeleteAsync(model.Id);
             return RedirectToAction(nameof(Mine));
         }
+        [HttpPost]
+        public async Task<IActionResult> Like(int id)
+        {
+            if (await foodService.ExistsAsync(id) == false)
+            {
+                return BadRequest();
+            }
+            if (!await agentService.ExistByIdAsync(User.Id()))
+            {
+                return Unauthorized();
+            }
+            if (await foodService.IsLikedByUserIdAsync(id,User.Id()))
+            {
+                return BadRequest();
+            }
+          await foodService.Like(id, User.Id());
+            return RedirectToAction(nameof(All));
+        }
+        [HttpPost]
+        public async Task<IActionResult> Unlike(int id)
+        {
+            return View();
+        }
     }
 }
