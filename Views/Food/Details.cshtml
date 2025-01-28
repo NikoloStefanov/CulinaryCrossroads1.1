@@ -20,7 +20,7 @@
             
             <p>@Model.Recipe</p>
             <p>Category: <b>@Model.Category</b></p>
-            <p><i>(@(Model.IsLiked ? "This recipe is liked by you" : "This recipe is not liked by you"))</i></p>
+          
             <div class="form-inline">
                 @if (this.User.Identity.IsAuthenticated)
                 {
@@ -28,20 +28,7 @@
                    asp-route-id="@Model.Id">Edit</a>
                     <a class="ml-2 btn btn-danger" asp-controller="Food" asp-action="Delete"
                    asp-route-id="@Model.Id">Delete</a>
-                    @if (!Model.IsLiked)
-                    {
-                        <form class="ml-2" asp-controller="Food"
-                      asp-action="Like" asp-route-id="@Model.Id" method="post">
-                            <input class="btn btn-primary" type="submit" value="Like" />
-                        </form>
-                    }
-                    else
-                    {
-                        <form class="ml-2" asp-controller="Food" asp-action="Unlike"
-                      asp-route-id="@Model.Id" method="post">
-                            <input class="btn btn-primary" type="submit" value="Unlike" />
-                        </form>
-                    }
+                  
                 }
             </div>
             <p></p>

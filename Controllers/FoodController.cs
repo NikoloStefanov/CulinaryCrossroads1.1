@@ -40,12 +40,12 @@ namespace CulinaryCrossroads1._1.Controllers
         [HttpGet]
         public async Task<IActionResult> All([FromQuery] AllFoodsQueryModel query)
         {
-           var queryResult = foodService.All(
+           var queryResult =await foodService.AllAsync(
                query.Category,
                query.SearchTerm,
                query.Sorting,
                query.CurrentPage,
-               AllFoodsQueryModel.FoodPerPage);
+               query.FoodPerPage);
             query.TotalFoodsCount = queryResult.TotalFoodsCount;
             query.Foods = queryResult.Foods;
             var foodCategories = await foodService.AllCategoriesNameAsync();
@@ -74,7 +74,7 @@ namespace CulinaryCrossroads1._1.Controllers
                 return BadRequest();
             }
            
-            if (await foodService.CategoryExistAsync(model.CategoryId))
+            if (await foodService.CategoryExistAsync(model.CategoryId)==false)
             {
                 this.ModelState.AddModelError(nameof(model.CategoryId), "Category does not exist");
             }
@@ -180,28 +180,6 @@ namespace CulinaryCrossroads1._1.Controllers
             await foodService.DeleteAsync(model.Id);
             return RedirectToAction(nameof(Mine));
         }
-        [HttpPost]
-        public async Task<IActionResult> Like(int id)
-        {
-            if (await foodService.ExistsAsync(id) == false)
-            {
-                return BadRequest();
-            }
-            if (!await agentService.ExistByIdAsync(User.Id()))
-            {
-                return Unauthorized();
-            }
-            if (await foodService.IsLikedByUserIdAsync(id,User.Id()))
-            {
-                return BadRequest();
-            }
-          await foodService.Like(id, User.Id());
-            return RedirectToAction(nameof(All));
-        }
-        [HttpPost]
-        public async Task<IActionResult> Unlike(int id)
-        {
-            return View();
-        }
+       
     }
 }

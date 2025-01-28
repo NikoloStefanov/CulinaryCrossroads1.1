@@ -15,7 +15,7 @@ namespace CulinaryCrossroads1._1.Models.Food
         [Required]
         [Display(Name = "Image URL")]
         public string ImageUrl { get; set; } = string.Empty;
-        public bool IsLiked { get; set; }
+       
         [Display(Name ="Category")]
         public int CategoryId { get; set; }
         public IEnumerable<FoodCategoryServiceModel> Categories { get; set; } = new List<FoodCategoryServiceModel>();
