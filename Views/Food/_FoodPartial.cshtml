@@ -8,13 +8,13 @@
         <div class="card-body text-center">
             <h4>@Model.Title</h4>
       <br />
-            <a asp-controller="House" asp-action="Details" asp-route-id="@Model.Id"
+            <a asp-controller="Food" asp-action="Details" asp-route-id="@Model.Id"
                class="btn btn-success">Details</a>
             @if (this.User.Identity.IsAuthenticated)
             {
-                <a asp-controller="House" asp-action="Edit" asp-route-id="@Model.Id"
+                <a asp-controller="Food" asp-action="Edit" asp-route-id="@Model.Id"
                class="btn btn-warning">Edit</a>
-                <a asp-controller="House" asp-action="Delete" asp-route-id="@Model.Id"
+                <a asp-controller="Food" asp-action="Delete" asp-route-id="@Model.Id"
                class="btn btn-danger">Delete</a>
                 <p></p>
                 

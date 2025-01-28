@@ -87,9 +87,14 @@ namespace CulinaryCrossroads1._1.Controllers
             var foodId = await foodService.CreateAsync(model.Title, model.Recipe, model.ImageUrl, model.CategoryId, agendId);
             return RedirectToAction(nameof(Details), new {id = foodId } );
         }
-        public async Task<IActionResult> Details()
+        public async Task<IActionResult> Details(int id)
         {
-            return View();
+            if (await foodService.ExistsAsync(id) == false)
+            {
+                return BadRequest();
+            }
+            var foodDetails = await foodService.FoodDetailsByIdAsync(id);
+            return View(foodDetails);
         }
     }
 }
