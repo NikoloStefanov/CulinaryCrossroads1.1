@@ -2,6 +2,7 @@
 using CullinaryCrossroads1._1.Core.Contacts;
 using CullinaryCrossroads1._1.Core.Services;
 using CullinaryCrossroads1._1.Infrastructure;
+using CullinaryCrossroads1._1.Infrastructure.Data.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +18,22 @@ namespace CulinaryCrossroads1._1.Controllers
             this.foodService = foodService;
             
             this.agentService = agentService;
+        }
+        public async Task<IActionResult> Mine()
+        {
+            IEnumerable<FoodServiceModel> allMyRecipes = null;
+            var userId = User.Id();
+            if (await agentService.ExistByIdAsync(userId))
+            {
+                var currentAgentId = await agentService.GetAgentIdAsync(userId);
+                allMyRecipes = await foodService.AllRecipesByAgentIdAsync(currentAgentId);
+            }
+            else
+            {
+                return RedirectToAction(nameof(AgentController.Become), "Agent");
+            
+            }
+            return View(allMyRecipes);
         }
 
 
@@ -41,7 +58,7 @@ namespace CulinaryCrossroads1._1.Controllers
         {
             if (!await agentService.ExistByIdAsync(User.Id()))
             {
-                return BadRequest();
+                return RedirectToAction(nameof(AgentController.Become), "Agent");
             }
           
             return View(new FoodFormModel

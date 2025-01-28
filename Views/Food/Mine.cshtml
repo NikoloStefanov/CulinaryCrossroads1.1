@@ -1,0 +1,18 @@
+﻿@using CullinaryCrossroads1._1.Core.Services
+@model IEnumerable<FoodServiceModel>
+@{
+	ViewBag.Title = "My Recipes";
+}
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+@if(!Model.Any())
+{
+	<h2 class="text-center">You have no recipes yet!</h2>
+}
+<div class="row">
+
+	@foreach (var food in Model)
+	{
+		<partial name = "_FoodPartial" model = "@food"/>
+	}
+</div>
