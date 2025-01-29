@@ -1,8 +1,7 @@
-﻿using CulinaryCrossroads1._1.Models.Food;
+﻿using CulinaryCrossroads1._1.Extensions;
+using CulinaryCrossroads1._1.Models.Food;
 using CullinaryCrossroads1._1.Core.Contacts;
 using CullinaryCrossroads1._1.Core.Services;
-using CullinaryCrossroads1._1.Infrastructure;
-using CullinaryCrossroads1._1.Infrastructure.Data.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

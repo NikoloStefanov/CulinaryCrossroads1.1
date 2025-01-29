@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using CullinaryCrossroads1._1.Core.Enumeration;
 using CullinaryCrossroads1._1.Core.Services;
-using CullinaryCrossroads1._1.Infrastructure;
 
 namespace CulinaryCrossroads1._1.Models.Food
 {
